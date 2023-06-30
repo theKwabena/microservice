@@ -2,7 +2,7 @@
 
 namespace microservice.Repository
 {
-    public interface IProductRepository
+    public interface ITodoRepository
     {
         IEnumerable<Todo> GetTodos();
         Todo getTodobyID(int todoID);

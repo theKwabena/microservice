@@ -1,4 +1,5 @@
 using microservice.Models;
+using microservice.Repository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +13,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<apidbcontext>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("default")
     ));
+builder.Services.AddTransient<ITodoRepository, TodoRepository>();
 
 var app = builder.Build();
 
